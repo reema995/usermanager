@@ -1,0 +1,40 @@
+<h2><i class="fas fa-users"></i> User List</h2>
+<div class="controls">
+  <select (change)="filterUsers($event)">
+    <option value="all">All Users</option>
+    <option value="active">Active Users</option>
+    <option value="inactive">Inactive Users</option>
+  </select>
+  <button (click)="exportToCSV()" class="export-btn"><i class="fas fa-download"></i> Export to CSV</button>
+</div>
+<table *ngIf="filteredUsers.length > 0; else noUsers" class="animated-table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Registration Date</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of filteredUsers">
+      <td><img [src]="user.profileImage" alt="{{ user.name }}" class="profile-img" (error)="onImageError($event)"></td>
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.registrationDate }}</td>
+      <td [ngClass]="{'active': user.status === 'Active', 'inactive': user.status === 'Inactive'}">
+        {{ user.status }}
+      </td>
+      <td class="actions">
+        <a [routerLink]="['/users/details', user.id]"><i class="fas fa-info-circle"></i> Details</a>
+        <a [routerLink]="['/users/edit', user.id]"><i class="fas fa-edit"></i> Edit</a>
+        <a [routerLink]="['/users/delete', user.id]"><i class="fas fa-trash"></i> Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #noUsers><p class="no-users">No users found.</p></ng-template>

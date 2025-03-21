@@ -1,0 +1,130 @@
+.login-page {
+  min-height: 100vh;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-container {
+  max-width: 420px;
+  width: 100%;
+  
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+  animation: slideUp 0.5s ease;
+}
+
+h2 {
+  color: #26022b;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  color: #3f4653;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.95em;
+}
+
+.input-group input {
+  padding: 12px 15px;
+  border: 2px solid #D1D5DB;
+  border-radius: 10px;
+  font-size: 1em;
+  color: #111827;
+  background: #F9FAFB;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #8B5CF6; 
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
+}
+
+.login-btn {
+  background: #8B5CF6;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #7C3AED;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(124, 58, 237, 0.4);
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #3f4653;
+  font-size: 0.9em;
+}
+
+.register-link a {
+  color: #7C3AED;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+  color: #7C3AED;
+  text-decoration: underline;
+}
+
+.alert {
+  background: #EF4444;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9em;
+  animation: shake 0.5s ease;
+}
+
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}

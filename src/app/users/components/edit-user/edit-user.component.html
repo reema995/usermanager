@@ -1,0 +1,11 @@
+<h2><i class="fas fa-edit"></i> Edit User</h2>
+<form *ngIf="user" (ngSubmit)="onSubmit()">
+  <input [(ngModel)]="user.name" name="name" placeholder="Name" required>
+  <input [(ngModel)]="user.email" name="email" placeholder="Email" required>
+  <input [(ngModel)]="user.password" name="password" type="password" placeholder="Password" required>
+  <select [(ngModel)]="user.status" name="status">
+    <option value="Active">Active</option>
+    <option value="Inactive">Inactive</option>
+  </select>
+  <button type="submit"><i class="fas fa-save"></i> Save</button>
+</form>

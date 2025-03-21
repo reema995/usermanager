@@ -1,0 +1,105 @@
+.details-card {
+  background: #F9FAFB;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 20px auto;
+  animation: fadeIn 0.5s ease;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #D1D5DB;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.header-info {
+  flex-grow: 1;
+}
+
+.header-info h3 {
+  margin: 0;
+  color: #6B7280;
+  font-size: 1.5em;
+}
+
+.user-id {
+  background: #8B5CF6;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9em;
+}
+
+.user-info {
+  margin-bottom: 20px;
+}
+
+.user-info p {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.user-info strong {
+  color: #6B7280;
+  margin-right: 10px;
+}
+
+.active {
+  color: #10B981;
+  font-weight: bold;
+}
+
+.inactive {
+  color: #EF4444;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.back-btn {
+  background: #6B7280;
+}
+
+.back-btn:hover {
+  background: #4B5563;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.edit-btn {
+  background: #8B5CF6;
+}
+
+.edit-btn:hover {
+  background: #7C3AED;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.no-user {
+  text-align: center;
+  color: #EF4444;
+  font-style: italic;
+  font-size: 1.2em;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

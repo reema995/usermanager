@@ -1,0 +1,22 @@
+<h2><i class="fas fa-info-circle"></i> User Details</h2>
+<div *ngIf="user; else noUser" class="details-card">
+  <div class="user-header">
+    <img [src]="user.profileImage" alt="{{ user.name }}" class="profile-img" (error)="onImageError($event)">
+    <div class="header-info">
+      <h3>{{ user.name }}</h3>
+      <span class="user-id">ID: {{ user.id }}</span>
+    </div>
+  </div>
+  <div class="user-info">
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Registration Date:</strong> {{ user.registrationDate }}</p>
+    <p><strong>Status:</strong> <span [ngClass]="{'active': user.status === 'Active', 'inactive': user.status === 'Inactive'}">{{ user.status }}</span></p>
+  </div>
+  <div class="actions">
+    <button (click)="goBack()" class="back-btn"><i class="fas fa-arrow-left"></i> Back</button>
+    <button [routerLink]="['/users/edit', user.id]" class="edit-btn"><i class="fas fa-edit"></i> Edit</button>
+  </div>
+</div>
+<ng-template #noUser>
+  <p class="no-user">User not found.</p>
+</ng-template>

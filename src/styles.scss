@@ -1,0 +1,83 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #E5E7EB; 
+  color: #111827; 
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #6B7280; 
+  text-align: center;
+}
+
+button {
+  background-color: #8B5CF6; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease; 
+}
+
+button:hover {
+  background-color: #7C3AED;
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+}
+
+input {
+  padding: 10px;
+  margin: 5px 0;
+  border: 2px solid #6B7280; 
+  border-radius: 6px;
+  width: 100%;
+  max-width: 300px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #8B5CF6; 
+  outline: none;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+.animated-alert {
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.swal2-title {
+  color: #6B7280;
+  font-size: 1.5em;
+}
+
+.swal2-content {
+  color: #111827;
+  font-size: 1.1em;
+}
+
+.swal2-title {
+  color: #6B7280;
+  font-size: 1.5em;
+}
+
+.swal2-content {
+  color: #111827;
+  font-size: 1.1em;
+}

@@ -1,0 +1,81 @@
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 8px;
+  border: 2px solid #6B7280;
+  border-radius: 6px;
+  background: white;
+  color: #111827;
+}
+
+.export-btn {
+  background: #10B981;
+}
+
+.export-btn:hover {
+  background: #059669;
+}
+
+.animated-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  animation: slideUp 0.5s ease;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #D1D5DB;
+}
+
+th {
+  background: #6B7280;
+  color: white;
+  font-weight: bold;
+}
+
+tr {
+  transition: background-color 0.3s ease;
+}
+
+tr:hover {
+  background-color: #F3F4F6;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.active { color: #10B981; font-weight: bold; }
+.inactive { color: #EF4444; font-weight: bold; }
+
+.actions a {
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.actions a:first-child { color: #6B7280; }
+.actions a:nth-child(2) { color: #8B5CF6; }
+.actions a:last-child { color: #EF4444; }
+
+.actions a:hover { text-decoration: underline; }
+
+.no-users {
+  text-align: center;
+  color: #EF4444;
+  font-style: italic;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

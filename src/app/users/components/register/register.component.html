@@ -1,0 +1,26 @@
+<h2><i class="fas fa-user-plus"></i> Register</h2>
+<div class="register-container">
+  <form (ngSubmit)="onRegister()" class="register-form">
+    <div class="input-group">
+      <label for="name">Name</label>
+      <input id="name" [(ngModel)]="user.name" name="name" placeholder="Enter your name" required>
+    </div>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input id="email" [(ngModel)]="user.email" name="email" placeholder="Enter your email" required>
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input id="password" [(ngModel)]="user.password" type="password" name="password" placeholder="Enter your password" required>
+    </div>
+    <div class="input-group">
+      <label for="profileImage">Profile Image</label>
+      <input id="profileImage" type="file" (change)="onImageChange($event)" accept="assets/*" required>
+      <img *ngIf="previewImage" [src]="previewImage" alt="Preview" class="image-preview">
+    </div>
+    <button type="submit" class="register-btn"><i class="fas fa-user-plus"></i> Register</button>
+  </form>
+  <p class="login-link">Already have an account? <a routerLink="/users/login">Login here</a></p>
+  <div *ngIf="successMessage" class="success-alert">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="error-alert">{{ errorMessage }}</div>
+</div>

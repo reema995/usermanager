@@ -1,0 +1,20 @@
+<h2><i class="fas fa-user"></i> My Profile</h2>
+<div *ngIf="app.currentUser; else notLoggedIn" class="profile-card">
+  <img [src]="app.currentUser.profileImage || defaultImage" alt="{{ app.currentUser.name }}" class="profile-img" (error)="onImageError($event)">
+  <div class="profile-info">
+    <h3>{{ app.currentUser.name }}</h3>
+    <p><strong>Email:</strong> {{ app.currentUser.email }}</p>
+    <p><strong>Registration Date:</strong> {{ app.currentUser.registrationDate }}</p>
+    <p><strong>Status:</strong> <span [ngClass]="{'active': app.currentUser.status === 'Active', 'inactive': app.currentUser.status === 'Inactive'}">{{ app.currentUser.status }}</span></p>
+    <div class="input-group">
+      <label for="profileImage">Change Profile Image</label>
+      <input id="profileImage" type="file" (change)="onImageChange($event)" accept="image/*">
+      <img *ngIf="previewImage" [src]="previewImage" alt="Preview" class="image-preview">
+    </div>
+    <button (click)="saveImage()" class="save-btn"><i class="fas fa-save"></i> Save Image</button>
+  </div>
+  <button (click)="app.logout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+</div>
+<ng-template #notLoggedIn>
+  <p class="no-user">Please log in to view your profile.</p>
+</ng-template>

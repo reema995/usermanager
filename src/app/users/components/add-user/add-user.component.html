@@ -1,0 +1,13 @@
+<h2><i class="fas fa-user-plus"></i> Add User</h2>
+<form *ngIf="!successMessage" (ngSubmit)="onSubmit()" class="add-user-form">
+  <input [(ngModel)]="user.name" name="name" placeholder="Name" required>
+  <input [(ngModel)]="user.email" name="email" placeholder="Email" required>
+  <input [(ngModel)]="user.password" type="password" name="password" placeholder="Password" required>
+  <div class="input-group">
+    <label for="profileImage">Profile Image</label>
+    <input id="profileImage" type="file" (change)="onImageChange($event)" accept="image/*" required>
+    <img *ngIf="previewImage" [src]="previewImage" alt="Preview" class="image-preview">
+  </div>
+  <button type="submit"><i class="fas fa-save"></i> Add User</button>
+</form>
+<div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>

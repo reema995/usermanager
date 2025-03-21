@@ -1,0 +1,18 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo-section">
+      <img src="assets/logo.jpg" alt="Logo" class="logo-img" (click)="goToHome()">
+      <h1 (click)="goToHome()">User Manager</h1>
+    </div>
+    <div class="nav-links">
+      <a routerLink="/users"><i class="fas fa-users"></i> Users</a>
+      <a routerLink="/users/add"><i class="fas fa-user-plus"></i> Add User</a>
+      <a routerLink="/users/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+      <a *ngIf="currentUser" routerLink="/users/profile"><i class="fas fa-user"></i> Profile</a>
+      <a *ngIf="currentUser" (click)="logout()" style="cursor: pointer;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
