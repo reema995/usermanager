@@ -4,7 +4,10 @@
       <img src="assets/logo.jpg" alt="Logo" class="logo-img" (click)="goToHome()">
       <h1 (click)="goToHome()">User Manager</h1>
     </div>
-    <div class="nav-links">
+    <button class="menu-toggle" (click)="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links" [ngClass]="{'show': menuOpen}">
       <a routerLink="/users"><i class="fas fa-users"></i> Users</a>
       <a routerLink="/users/add"><i class="fas fa-user-plus"></i> Add User</a>
       <a routerLink="/users/login"><i class="fas fa-sign-in-alt"></i> Login</a>

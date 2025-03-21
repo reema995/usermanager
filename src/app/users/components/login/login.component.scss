@@ -1,6 +1,6 @@
 .login-page {
   min-height: 100vh;
-  
+  background: linear-gradient(135deg, #6B7280, #8B5CF6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,15 +10,15 @@
 .login-container {
   max-width: 420px;
   width: 100%;
-  
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   animation: slideUp 0.5s ease;
 }
 
 h2 {
-  color: #26022b;
+  color: #111827;
   font-size: 2em;
   margin-bottom: 20px;
   text-align: center;
@@ -40,7 +40,7 @@ h2 {
 }
 
 .input-group label {
-  color: #3f4653;
+  color: #6B7280;
   font-weight: 600;
   margin-bottom: 8px;
   font-size: 0.95em;
@@ -54,11 +54,12 @@ h2 {
   color: #111827;
   background: #F9FAFB;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
 }
 
 .input-group input:focus {
   outline: none;
-  border-color: #8B5CF6; 
+  border-color: #8B5CF6;
   box-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
 }
 
@@ -87,12 +88,12 @@ h2 {
 .register-link {
   text-align: center;
   margin-top: 20px;
-  color: #3f4653;
+  color: #6B7280;
   font-size: 0.9em;
 }
 
 .register-link a {
-  color: #7C3AED;
+  color: #10B981;
   text-decoration: none;
   font-weight: 600;
   display: inline-flex;
@@ -102,7 +103,7 @@ h2 {
 }
 
 .register-link a:hover {
-  color: #7C3AED;
+  color: #059669;
   text-decoration: underline;
 }
 
@@ -117,7 +118,6 @@ h2 {
   animation: shake 0.5s ease;
 }
 
-
 @keyframes slideUp {
   from { transform: translateY(50px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
@@ -127,4 +127,35 @@ h2 {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-5px); }
   75% { transform: translateX(5px); }
+}
+
+/* Media Query للهواتف (شاشات أقل من 768px) */
+@media (max-width: 768px) {
+  .login-container {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .input-group input {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  .login-btn {
+    padding: 10px;
+    font-size: 1em;
+  }
+
+  .register-link {
+    font-size: 0.85em;
+  }
+
+  .alert {
+    font-size: 0.8em;
+    padding: 10px;
+  }
 }

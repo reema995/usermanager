@@ -10,8 +10,8 @@ import Swal from 'sweetalert2';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  users: User[] = [];
-  currentUser: User | null = null;
+  users: User[] = [];currentUser: User | null = null;
+  menuOpen = false; 
 
   constructor(private router: Router, private cdr: ChangeDetectorRef) {
     this.loadUsers();
@@ -43,7 +43,7 @@ export class AppComponent {
     user.id = this.users.length ? Math.max(...this.users.map(u => u.id)) + 1 : 1;
     const now = new Date();
     user.registrationDate = now.toISOString().slice(0, 16).replace('T', ' ');
-    user.profileImage = user.profileImage || '/assets/default-user.png';
+    user.profileImage = user.profileImage || '/assets/images/default-user.png';
     user.status = 'Inactive';
     this.users.push(user);
     this.saveUsers();
@@ -78,7 +78,7 @@ export class AppComponent {
     if (this.currentUser) {
       const userName = this.currentUser.name;
       this.currentUser.status = 'Inactive';
-      this.editUser(this.currentUser); 
+      this.editUser(this.currentUser);
       this.currentUser = null;
       this.cdr.detectChanges();
       Swal.fire({
@@ -109,11 +109,16 @@ export class AppComponent {
         }).then(() => this.router.navigate(['/users/login']));
       });
     } else {
-     
       this.router.navigate(['/users/login']);
     }
   }
+
   goToHome() {
-    this.router.navigate(['/users']); 
-}
+    this.router.navigate(['/users']);
+    this.menuOpen = false; 
+  }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen; 
+  }
 }
